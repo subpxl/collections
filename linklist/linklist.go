@@ -2,7 +2,18 @@ package main
 
 import "fmt"
 
-func linklistInit() {
+// Linked List
+type LinkedList struct {
+	Head   *Node
+	Length int
+}
+
+type Node struct {
+	Data int
+	Next *Node
+}
+
+func main() {
 
 	myl := LinkedList{Head: nil}
 	myl.Create(1)
@@ -18,16 +29,6 @@ func linklistInit() {
 	ReverseRecursion(myl.Head)
 	myl.show()
 
-}
-
-type LinkedList struct {
-	Head   *Node
-	Length int
-}
-
-type Node struct {
-	Data int
-	Next *Node
 }
 
 func (l *LinkedList) Create(data int) {
@@ -143,35 +144,3 @@ func ReverseRecursion(node *Node) {
 	ReverseRecursion(p.Next)
 	fmt.Println(p.Data)
 }
-
-// first last middle insert delte
-
-// reverse
-
-// reverse with recursion
-
-// Print the Middle of a given linked list
-
-// Flattening a linked list
-
-// Delete the elements in an linked list whose sum is equal to zero
-
-// Delete middle of linked list
-
-// Remove duplicate elements from sorted linked list
-
-// Add 1 to a number represented as a linked list
-
-// Reverse a linked list in groups of given size
-
-// Detect loop in linked list
-
-// Find nth node from the end of linked list
-
-// Reverse alternate k node in a singly linked list
-
-// Delete last occurrence of an item from linked list
-
-// Delete n nodes after m nodes of a linked list.
-
-// Merge a linked list into another linked list at alternate positions.

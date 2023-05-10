@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+type Tree struct {
+	Data  int
+	Left  *Tree
+	Right *Tree
+}
+
 func main() {
 	t := &Tree{Data: 50, Left: nil, Right: nil}
 	t.Insert(100)
@@ -25,13 +31,6 @@ func main() {
 	// t.Root.Traverse()
 	// print(os.Stdout, t.Root, 0, 'M')
 
-}
-
-type Tree struct {
-	lenght int
-	Data   int
-	Left   *Tree
-	Right  *Tree
 }
 
 func BFST(tree *Tree) []int {
@@ -74,7 +73,6 @@ func DFSUtil(visited []*Tree, result []int) []int {
 	if visited[0].Right != nil {
 
 	}
-
 	return result
 }
 
@@ -90,18 +88,13 @@ func (t *Tree) Insert(data int) *Tree {
 				// left
 				if current.Left == nil {
 					current.Left = &temp
-
-					t.lenght++
 					return current
-
 				}
 				current = current.Left
 			} else {
 				// right
 				if current.Right == nil {
 					current.Right = &temp
-					t.lenght++
-
 					return current
 
 				}
@@ -109,7 +102,6 @@ func (t *Tree) Insert(data int) *Tree {
 			}
 		}
 	}
-
 }
 
 func (t *Tree) Lookup(data int) *Tree {

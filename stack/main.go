@@ -3,24 +3,25 @@ package main
 import "fmt"
 
 // lifo
+// Stack implementaion with slice
+type Stack struct {
+	Items []int
+}
+
 func main() {
 
 	var mys Stack
-	fmt.Println(mys.isEmpty())
 	mys.Push(99)
 	mys.Push(1)
 	mys.Push(2)
 	mys.Push(3)
 	mys.Push(4)
 	fmt.Println(mys.isEmpty())
+	fmt.Println(mys.isEmpty())
 	fmt.Println(mys.Pop())
 	fmt.Println(mys.Pop())
 	fmt.Println(mys.Peek())
 
-}
-
-type Stack struct {
-	Items []int
 }
 
 func (s *Stack) isEmpty() bool {

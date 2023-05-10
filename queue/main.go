@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+// first in first out
+// Queue implementation
+type Queue struct {
+	Items []int
+}
+
 func main() {
 
 	myq := Queue{}
@@ -13,11 +19,6 @@ func main() {
 	fmt.Println(myq.dequeue())
 	fmt.Println(myq.dequeue())
 
-}
-
-// first in first out
-type Queue struct {
-	Items []int
 }
 
 func (q *Queue) enqueue(data int) int {
