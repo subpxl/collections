@@ -18,6 +18,7 @@ func main() {
 }
 
 func insertionSort(a []int) {
+
 	for i := 0; i < len(a); i++ {
 		for j := i; j < len(a); j++ {
 			if a[j] < a[i] {
@@ -66,22 +67,6 @@ func merge(a []int, b []int) []int {
 	return final
 }
 
-// starter
-func quicksortStart(a []int) []int {
-	return quicksort(a, 0, len(a)-1)
-}
-
-// quicksort
-func quicksort(a []int, low, high int) []int {
-	if low < high {
-		var p int
-		a, p = partition(a, low, high)
-		a = quicksort(a, low, p-1)
-		a = quicksort(a, high, p+1)
-	}
-	return a
-}
-
 // partition
 func partition(a []int, low, high int) ([]int, int) {
 	pivot := a[high]
@@ -95,4 +80,22 @@ func partition(a []int, low, high int) ([]int, int) {
 	}
 	a[i], a[high] = a[high], a[i]
 	return a, i
+}
+
+// quicksort
+
+func quicksort(a []int, low, high int) []int {
+	if low < high {
+		var p int
+		a, p = partition(a, low, high)
+		a = quicksort(a, low, p-1)
+		a = quicksort(a, high, p+1)
+	}
+	return a
+}
+
+// starter
+
+func quicksortStart(a []int) []int {
+	return quicksort(a, 0, len(a)-1)
 }

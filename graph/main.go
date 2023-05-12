@@ -15,14 +15,13 @@ type Graph struct {
 
 func main() {
 	g := Graph{}
-	for i := 0; i < 5; i++ {
-		g.add_vertices(i)
-	}
+	g.add_vertices(1)
+	g.add_vertices(2)
+	g.add_vertices(3)
 
 	g.add_edges(1, 2)
 	g.add_edges(1, 3)
 	g.add_edges(2, 3)
-	g.add_edges(2, 4)
 	g.showGraph()
 }
 
@@ -32,7 +31,6 @@ func (g *Graph) add_vertices(v int) {
 }
 
 func (g *Graph) get_vertex(k int) *Vertex {
-
 	for _, v := range g.vertices {
 		if v.Key == k {
 			return v
